@@ -40,5 +40,10 @@ print(cv_dataframe)
 
 #### TF-IDF ####
 
+tfidf_transformer = TfidfTransformer()
+X_train_tfidf = tfidf_transformer.fit_transform(tokenized_matrix)
+X_train_tfidf.shape
+cv_dataframe=pd.DataFrame(X_train_tfidf.toarray(),columns=tfidf_transformer.get_feature_names_out())
+
 
 #### Cluster ####
